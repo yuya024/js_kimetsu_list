@@ -2,13 +2,13 @@ window.onload = async function firstLoad() {
   getApi()
 } 
 
-const getApi = async (url = 'all.json') => {
+const getApi = async (url = 'all') => {
   loading();
 
   const tableBody = document.getElementById('table-body');
   clearTableBody(tableBody);
 
-  const response = await fetch(`https://ihatov08.github.io/kimetsu_api/api/${url}`);
+  const response = await fetch(`https://ihatov08.github.io/kimetsu_api/api/${url}.json`);
   const characters = await response.json();
   appendCharctersToTable(characters, tableBody);
 
